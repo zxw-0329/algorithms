@@ -1,6 +1,6 @@
 #include<bits/stdc++.h>
-using namespace std;//格式化ctrl+c+f
-using ll = long long;
+using namespace std;
+using ll = long long;   //https://codeforces.com/contest/1829/problem/C
 void solve() {
     int n;
     cin >> n;
