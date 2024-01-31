@@ -1,5 +1,5 @@
 #include<bits/stdc++.h>
-using namespace std;//格式化shift+alt+f
+using namespace std; 
 using ll = long long;//https://codeforces.com/contest/1760/problem/E;贪心加数学
 
 void solve(){
