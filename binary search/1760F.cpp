@@ -1,4 +1,5 @@
 //二分答案+贪心 (check为周期等于k+1的检查)
+//https://codeforces.com/contest/1760/problem/F
 /*
 #include<bits/stdc++.h>
 using namespace std;
