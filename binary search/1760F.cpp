@@ -5,12 +5,20 @@
 using namespace std;
 using ll = long long;
 bool check(ll k,vector<int>&a,ll d,ll c){
-    ll res = 0;
-    int n=a.size();
-    for (int i = 0; i < min(n*1LL, k + 1); i++) {
-         res += 1LL * a[i] * (d / (k + 1) + (d % (k + 1) > i));
-    }
-    return res>=c;
+    // ll res = 0;
+    // int n=a.size();
+    // for (int i = 0; i < min(n*1LL, k + 1); i++) {
+    //      res += 1LL * a[i] * (d / (k + 1) + (d % (k + 1) > i));
+    // }
+    // return res>=c;
+    ll sum=0;
+    for (int i = 0; i < d; i++) {
+        int id = i % (mid + 1);//周期为k+1;
+        if (id < n) {
+          sum += a[id];
+        }
+      }
+      return sum>=c;
 }
 void solve() {
      int n;
