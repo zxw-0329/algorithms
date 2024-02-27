@@ -1,2 +1,2 @@
 # algorithms
-算法
+algorithms
