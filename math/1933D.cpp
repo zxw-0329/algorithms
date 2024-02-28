@@ -1,3 +1,6 @@
+//https://codeforces.com/contest/1933/problem/D
+//最小的数唯一 YES
+//不唯一 在剩下的数与最小数的取模找 %min!=0 (YES) else (NO)
 #include <bits/stdc++.h>
 using namespace std;
 using ll = long long;
