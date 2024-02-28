@@ -1,4 +1,5 @@
 //二分+前缀和    https://codeforces.com/contest/1933/problem/E;
+//找到第一个 >=u 的位置 最优
 #include <bits/stdc++.h>
 using namespace std;
 using ll = long long;
