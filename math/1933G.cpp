@@ -19,9 +19,9 @@ bool check(int x, int y, int t) {
     }
     y += t;
     if (x & 1) { // 返回当前位置是否为0        00110011   <- x为偶数
-        return y % 4 == 2 || y % 4 == 3;  // 11001100   <- x为奇数
+        return y % 4 == 0 || y % 4 == 1;  // 11001100   <- x为奇数
     }                                     //   23
-    return y % 4 == 0 || y % 4 == 1;
+    return y % 4 == 2 || y % 4 == 3;
 }
 void solve() {
     int n, m, q;
