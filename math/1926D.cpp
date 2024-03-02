@@ -31,8 +31,19 @@ void solve() {
             m[a[i]]--;
         }
     }
-
+  
     cout << ans << "\n";
+   // multiset<int> s;
+    // int ans = n;
+    // for (int i = 0; i < n; i++) {
+    //     if (s.count(a[i] ^ ((1ll << 31) - 1))) {
+    //         s.extract(a[i] ^ ((1ll << 31) - 1));
+    //         ans--;
+    //     } else {
+    //         s.insert(a[i]);
+    //     }
+    // }
+    // cout << ans << "\n";
 }
 int main() {
     ios::sync_with_stdio(false);
