@@ -104,4 +104,48 @@ void solve() {
     cout << ans[0] << "\n";
 }
 
+using ll = long long;
+const ll inf = 1e18;
+void solve() {
+    int n, m;
+    cin >> n >> m;
+    vector<pair<int, ll>>adj[n];
+    for (int i = 0; i < m; i++) {
+        int a, b, c;
+        cin >> a >> b >> c;
+        a--, b--;
+        adj[a].emplace_back(b, c);
+        adj[b].emplace_back(a, c);
+    }
+    vector<int>s(n);
+    for (int i = 0; i < n; i++) {
+        cin >> s[i];
+    }
+    vector<vector<ll>> dis(n, vector<ll>(1001, inf));
+    vector<vector<bool>> vis(n, vector<bool>(1001, false));
+    priority_queue<array<ll, 3>, vector<array<ll, 3>>, greater<>>q;
+    dis[0][s[0]] = 0;
+    q.push({ 0, 0, s[0] });
+    while (!q.empty()) {
+        int u = q.top()[1];
+        int k = q.top()[2];
+        q.pop();
+        if (vis[u][k] || dis[u][k] == inf)continue;
+        vis[u][k] = true;
+        for (auto x : adj[u]) {
+            int v = x.first;
+            int w = x.second;
+            int c = min(s[v], k);
+            if (dis[v][c] > dis[u][k] + 1LL * w * k) {
+                dis[v][c] = dis[u][k] + 1LL * w * k;
+                q.push({ dis[v][c], v , c });
+            }
+        }
+    }
+    ll ans = inf;
+    for (int i = 0; i <= 1000; i++) {
+        ans = min(ans, dis[n - 1][i]);
+    }
+    cout << ans << "\n";
+}
 */
