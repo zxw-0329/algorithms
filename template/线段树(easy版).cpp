@@ -10,7 +10,7 @@ using namespace std;
 using ll = long long;
 const int N = 5e5 + 10;
 struct tree {
-    int l, sum, r;
+    int l, sum, r; //l ,r 存区间的左右端点;
 }tr[4 * N];
 int n;
 vector<int>a;
