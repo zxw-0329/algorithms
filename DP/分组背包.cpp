@@ -43,6 +43,18 @@ int main() {
                 }
             }
         }
+       // vector<int>dp(m + 1);   自我滚动
+       //  for (int i = 1; i <= n; i++) {
+       //      for (int j = m; j >=0; j--) {
+       //          for (int k = 1; k <= m; k++) {
+       //              if (j >= k) {
+       //                  dp[j] = max(dp[j], dp[j - k] + w[i][k]);
+       //                  // dp[i][j] = max(max(dp[i - 1][j], dp[i][j]), dp[i - 1][j - k] + w[i][k]);
+       //              }
+       //          }
+       //      }
+       //  }
+       // cout<<dp[m]<<"\n";
         cout << dp[n][m] << "\n";
     }
     return 0;
