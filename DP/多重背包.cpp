@@ -7,7 +7,8 @@
   但组合26种情况,不需要25个物品
   根据二进制任何一个十进制数X 都可以用 1，2，4，8....表示
   将题目种mi进行二进制拆分
-  
+
+  https://www.luogu.com.cn/problem/P1776
 */
 #include<bits/stdc++.h>
 using namespace std;
