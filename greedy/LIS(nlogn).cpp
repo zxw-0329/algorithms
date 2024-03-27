@@ -23,7 +23,7 @@ int main() {
 
    //   cout << it << "\n";
    for (int i = 0; i < n; i++) {
-      auto it = lower_bound(g.rbegin(), g.rend(), a[i]) - g.rbegin();
+      auto it = lower_bound(g.rbegin(), g.rend(), a[i]) - g.rbegin();//如果不是严格递增,允许有相同元素,要用 upper_bound(想想为什么)
       if (it == 0) {
          g.push_back(a[i]);
       }
