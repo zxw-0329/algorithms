@@ -1,7 +1,11 @@
 /*
-
-
+  用来解决RMQ问题（区间最大/最小查询）
+  思想：倍增
+  预处理：O(nlogn)
+  查询：O（1）
+  
   https://www.luogu.com.cn/problem/P3865
+  
 */
 #include<bits/stdc++.h>
 using namespace std;
