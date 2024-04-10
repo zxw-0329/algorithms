@@ -3,6 +3,8 @@
   对于每个数ai都是<=n
   对于前缀和只需要标记 <=n 的数即可
   之后在统计
+
+  https://codeforces.com/contest/1352/problem/E
 */
 #include<bits/stdc++.h>
 using namespace std;
