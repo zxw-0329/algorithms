@@ -7,12 +7,10 @@
 using namespace std;
 using ll = long long;
 constexpr int inf = 1e9;
-constexpr int N = 100010;
 struct Edge {
     int u, v, w;
 };
 vector<Edge>edge;
-vector<pair<int, int>>e[N];
 bool bellmanford(int n, int s) {
     vector<int>dis(n, inf);
     dis[s] = 0;
@@ -37,30 +35,6 @@ bool bellmanford(int n, int s) {
     // 第 n 轮循环仍然可以松弛时说明 s 点可以抵达一个负环
     return flag;
 }
-bool bellmanford1(int n, int s) {
-    vector<int>d(n, inf);
-    d[s] = 0;
-    bool ok = false;
-    for (int i = 0; i < n; i++) {//最多执行n-1轮松弛
-        ok = false;
-        for (int u = 0; u < n; u++) {
-            if (d[u] == inf)continue;
-            for (auto ed : e[u]) {
-                int v = ed.first, w = ed.second;
-                if (d[v] > d[u] + w) {
-                    d[v] = d[u] + w;
-                    ok = true;
-                }
-            }
-        }
-        if (!ok) {
-            break;
-        }
-    }
-    if (!ok) {// 第 n 轮循环仍然可以松弛时说明 s 点可以抵达一个负环
-        cout << "存在环";
-    }
-}
 int main() {
     ios::sync_with_stdio(false);
     cin.tie(nullptr);
@@ -73,8 +47,64 @@ int main() {
         int a, b, c;
         cin >> a >> b >> c;
         a--, b--;
-        e[a].push_back({ b,c });//邻接表
         edge.push_back({ a,b,c });
+       if(c>=0){
+        edge.push_back({ b,a,c });
+       }
+    }
+    return 0;
+}
+#include<bits/stdc++.h>
+using namespace std;
+using ll = long long;
+constexpr int inf = 1e9;
+int main() {
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
+    cout.tie(nullptr);
+    int t;
+    cin >> t;
+    while (t--) {
+        int n, m;
+        cin >> n >> m;
+        vector<pair<int, int>>e[n + 1];
+        for (int i = 0; i < m; i++) {
+            int a, b, c;
+            cin >> a >> b >> c;
+            a--, b--;
+            e[a].push_back({ b,c });
+            if (c >= 0) {
+                e[b].push_back({ a,c });
+            }
+        }
+        auto Bellman_ford = [&](int s)->bool {
+            vector<int>d(n, inf);
+            d[s] = 0;
+            bool ok = false;
+            for (int i = 0; i < n; i++) {//最多执行n-1轮松弛
+                ok = false;
+                for (int u = 0; u < n; u++) {
+                    if (d[u] == inf)continue;
+                    for (auto ed : e[u]) {
+                        int v = ed.first, w = ed.second;
+                        if (d[v] > d[u] + w) {
+                            d[v] = d[u] + w;
+                            ok = true;
+                        }
+                    }
+                }
+                if (!ok) {
+                    break;
+                }
+            }
+            return ok;
+            };
+        if (Bellman_ford(0)) {//存在负环
+            cout << "YES\n";
+        }
+        else {
+            cout << "NO\n";
+        }
     }
     return 0;
 }
