@@ -7,6 +7,8 @@
 
   SPFA 也可以用于判断 s 点是否能抵达一个负环，只需记录最短路经过了多少条边，当经过了至少 n 条边时，说明 s 点可以抵达一个负环。
 
+
+  https://www.luogu.com.cn/problem/P3385
 */
 
 #include<bits/stdc++.h>
