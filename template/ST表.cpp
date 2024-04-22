@@ -6,6 +6,7 @@
   
   https://www.luogu.com.cn/problem/P3865
   
+  https://www.luogu.com.cn/problem/P2471 模拟
 */
 #include<bits/stdc++.h>
 using namespace std;
