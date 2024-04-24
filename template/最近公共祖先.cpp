@@ -1,8 +1,10 @@
 /*
    通过预处理 {fa}_{x,i} 数组，游标可以快速移动，大幅减少了游标跳转次数。{fa}_{x,i} 表示点 x 的第 2^i 个祖先。{fa}_{x,i} 数组可以通过 dfs 预处理出来。
-
-   存储可以用链式前向星
    
+   存储可以用链式前向星
+
+   dep[u]：存u点的深度
+   fa[u][i]：存从u点往上跳2^i层的祖先节点
   https://www.luogu.com.cn/problem/P3379
 */
 #include<bits/stdc++.h>
