@@ -2,6 +2,7 @@
   用题目所给定的信息建图
   因为路径长度都为1
   直接用bfs寻找到终点最小次数
+  aoj 1466
 */
 #include<bits/stdc++.h>
 using namespace std;
