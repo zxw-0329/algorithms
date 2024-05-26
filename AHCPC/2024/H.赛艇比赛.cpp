@@ -11,7 +11,6 @@ int main() {
     vector<vector<int>>b(n, vector<int>(310, 0));
     for (int i = 0; i < n; i++) {
         for (int j = 0; j < m; j++) {
-
             cin >> a[i][j];
             b[i][a[i][j]]++;
         }
@@ -19,20 +18,20 @@ int main() {
     }
     vector<int>w(n);
     vector<int>l(n);
-    for (int i = 0; i < n; i++) {
+    for (int i = 0; i < n; i++) {//最多获胜场次
         int cnt = 0;
         for (int j = 0; j < n; j++) {
             if (j == i)continue;
-            auto r = a[i];
-            auto u = b[j];
+            auto p = a[i];
+            auto q = b[j];//枚举第j个人的速度，看第i个人是否有大于其的速度;
             int s = 0;
             for (int k = 0; k <= 300; k++) {
-                while (u[k]) {
-                    auto it = upper_bound(r.begin(), r.end(), k);
-                    if (it != r.end()) {
-                        u[k]--;
+                while (q[k]) {
+                    auto it = upper_bound(p.begin(), p.end(), k);
+                    if (it != p.end()) {
+                        q[k]--;
                         s++;
-                        r.erase(it);
+                        p.erase(it);
                     }
                     else break;
                 }
@@ -41,20 +40,20 @@ int main() {
         }
         w[i] = cnt;
     }
-    for (int i = 0; i < n; i++) {
+    for (int i = 0; i < n; i++) {//最少获胜场次
         int cnt = m;
         for (int j = 0; j < n; j++) {
             if (j == i)continue;
-            auto r = b[i];
-            auto u = a[j];
+            auto p = b[i];
+            auto q = a[j];//枚举第i个人的速度，看第j个人是否有大于其的速度;
             int s = 0;
             for (int k = 0; k <= 300; k++) {
-                while (r[k]) {
-                    auto it = lower_bound(u.begin(), u.end(), k);
-                    if (it != u.end()) {
-                        r[k]--;
+                while (p[k]) {
+                    auto it = lower_bound(q.begin(), q.end(), k);
+                    if (it != q.end()) {
+                        p[k]--;
                         s++;
-                        u.erase(it);
+                        q.erase(it);
                     }
                     else break;
                 }
