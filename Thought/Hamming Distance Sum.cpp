@@ -13,6 +13,7 @@
    之后计算t:0-i的值-有k个s0和它匹配
    依次类推
    https://codeforces.com/problemset/problem/608/B
+   灵茶 2024.5.28
 */
 #include<bits/stdc++.h>
 using namespace std;
