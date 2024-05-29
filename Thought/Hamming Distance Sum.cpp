@@ -12,6 +12,7 @@
    之后枚举起点（i=k-1）刚好是第一个窗口的最大距离
    之后计算t:0-i的值-有k个s0和它匹配
    依次类推
+   
    https://codeforces.com/problemset/problem/608/B
    灵茶 2024.5.28
 */
