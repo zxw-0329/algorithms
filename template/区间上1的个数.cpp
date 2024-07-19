@@ -1,6 +1,6 @@
 /*
   1.数学公式
-  2.数位dp
+  2.数位dp :https://ac.nowcoder.com/acm/contest/view-submission?submissionId=70163915
 
   https://ac.nowcoder.com/acm/contest/86639/D
   公式推导如下
