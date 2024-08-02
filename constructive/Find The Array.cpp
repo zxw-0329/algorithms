@@ -3,6 +3,9 @@
 
   用lix最近的 2^i进行构造
 
+
+  1在最高位所在的位置（从1开始计算）std::__bit_width(x)
+  https://zh.cppreference.com/w/cpp/numeric/bit_width
   https://codeforces.com/contest/1463/problem/B
 */
 #include<bits/stdc++.h>
