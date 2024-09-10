@@ -1,0 +1,43 @@
+
+<!--  注释 -->
+
+<!--你可以使用 img 元素来为你的网站添加图片，其中 src 属性指向图片的地址 
+所有的 img 元素 必须 有 alt 属性。
+alt 的属性值有两个作用，第一个作用是让屏幕阅读器可以知晓图片的内容，这会对网页的可访问性有很大提升；
+另一个作用是当图片无法加载时，页面需要显示的替代文本。 
+-->
+
+<img  src = "https://www.freecatphotoapp.com/your-image.jpg"  alt = " ">
+
+<!--
+你可以用 a（Anchor，简写为 a）来实现网页间的跳转。
+a 需要一个 href 属性指向跳转的目的地。 同时，它还应有内容.
+所指的内容会变色
+
+target的作用是否打开新标签 
+-->
+
+<a href="https://acm.webturing.com/index.php"  target="_blank">AOJ</a>
+
+<!--
+a可以实现内部跳转
+你需要将链接的 href 属性值设置为一个哈希符号 # 加
+上你想内部链接到的元素的 id，通常是在网页下方的元素。 
+然后你需要将相同的 id 属性添加到你链接到的元素中。 
+id 是描述网页元素的一个属性，它的值在整个页面中唯一。
+
+<a href="#footer"> 内部跳转 </a>
+
+<footer id="footer">Copyright Cat Photo App</footer>
+
+有时你想为网站添加一个 a 元素，但还不确定要将它链接到哪里。
+href 属性的当前值是指向 “https://acm.webturing.com/index.php”。
+请将 href 属性的值替换为#，以此来创建链接占位符。
+
+你可以通过把元素嵌套进 a 里使其变成一个链接。
+如果我们要把图片嵌套进 a 元素， 可以这样写
+<a href="#"><img src="https://cdn.freecodecamp.org/curriculum/cat-photo-app/relaxing-cat.jpg" alt="Three kittens running towards the camera."></a>
+如果把 a 的 href 属性值设置为 #，创建的是一个死链接（不跳转到其他画面）
+-->
+
+
