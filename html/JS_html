@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        function getElements(){
+            var x=document.getElementsByName("x");  //document.getElementsByName(name)的用法
+            alert(x.length);
+        }
+    </script>
+</head>
+<body>
+
+<p>我是一个段落</p>
+
+<!-- document.getElementById(id) start-->
+<p id="demo">xxxwww</p>
+
+<!-- document.getElementById(id) end-->
+
+<button onclick="myFunction">点击按钮调用函数</button>
+<button onclick="Add(1,2)">加法</button>
+
+<!-- 函数调用 end-->
+
+<!-- document.getElementsByName(name) start-->
+猫:
+<input name="x" type="radio" value="猫">
+狗:
+<input name="x" type="radio" value="狗">
+<input type="button" onclick="getElements()" value="多少名称为 'x'的元素?">
+
+<!-- document.getElementsByName(name) end-->
+
+</body>
+</html>
+<script>
+
+    //使用 window.alert() 弹出警告框
+    window.alert(5 + 6);
+    alert(11);
+    //使用 document.write()方法将内容写到 HTML 文档中。
+
+    //document.write(Date());
+    function myFunction() {
+        document.write(Date());
+    }
+
+    //使用 innerHTML 写入到 HTML 元素。
+    //将内容写入到 Html 中 id = "demo"的 标签/文本
+    document.getElementById("demo").innerHTML = "段落已修改";//修改 id="demo" 的 HTML 元素文本
+
+    //使用 console.log() 写入到浏览器的控制台。
+    console.log(2);
+
+    //JavaScript 对象
+    //对象由花括号分隔。在括号内部，对象的属性以名称和值对的形式 (name : value) 来定义。属性由逗号分隔：
+    let pe = { //创建对象
+        firstname: "John",
+        lastname: "Doe",
+        id: 5566,
+        fullName: function () {//对象方法
+           //通常 fullName() 是作为 person 对象的一个方法， fullName 是作为一个属性。
+            //如果使用 fullName 属性，不添加 (), 它会返回函数的定义：
+            return this.firstName + " " + this.lastName;
+        }
+    }
+    //document.write(pe.lastname + "<br>");
+    //document.write(pe["lastname"] + "<br>");//对象两种寻址方式
+    //document.getElementById("demo").innerHTML = pe.fullName();
+    // pe.fullName :不加括号输出函数表达式：function() { return this.firstName + " " + this.lastName; }
+
+    function Add(a, b) {
+        alert(a + b);
+    }
+
+
+    /*
+    document.getElementsByName(name)方法可返回带有指定名称(name = "xxx")的对象的集合
+    document.getElementById(elementID)方法可返回对拥有指定 ID(id = "xxx") 的第一个对象的引用。如果没有指定 ID 的元素返回 null
+                                                                            如果存在多个指定 ID 的元素则返回第一个。
+
+    document.getElementsByClassName(classname)方法返回文档中所有指定类名(class = "xxx")的元素集合，作为 NodeList 对象。
+    <body>
+    <div class="example">第一 Div 元素 class="example"。</div>
+    <div class="example">第二个 Div 元素 class="example"。</div>
+    <p>点击按钮修改第一个 Div 元素的文本信息（索引值为 0 的 class="example")。</p>
+    <button onclick="myFunction()">点我</button>
+    <body>
+    function myFunction() {
+            let x = document.getElementsByClassName("example");
+            x[0].innerHTML = "Hello World!";//将 "第一 Div 元素 class="example"。"改为了"Heelo World";
+    }
+    */
+</script>
