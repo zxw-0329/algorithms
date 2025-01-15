@@ -29,7 +29,11 @@ $001\quad 010\quad 011\quad 100\quad 101\quad 110$，
 
 2. n 单独作为 1 到 n 的二进制数的前缀,出现了 $(n \\& (2^i−1)) + 1$ 次,如果 n 是奇数,那么它为第 i 位贡献了 $(n\\& (2^i−1))+1$ 个 1，否则为第 i 位贡献了 0 个 1
 
+时间复杂度为 $\mathcal{O}(t\cdot(n+m\cdot \log mod))$ ，对于py为 $\mathcal{O}(tm)$
+### 具体代码如下——
+
 C++ 做法如下——
+
 ``` cpp []
 #include<bits/stdc++.h>
 
@@ -142,7 +146,9 @@ int main() {
     return 0;
 }
 ```
+
 python 做法如下——
+
 ``` python []
 def f(x, k): # 0 -> x   x在第 x + 1 个位置
     y = 1 << (k + 1)  # 循环节长度（2^k个0 和 2^k个1）
