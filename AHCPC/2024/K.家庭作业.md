@@ -36,7 +36,12 @@ $z$是将 $f(n-r)$ 按m的质因数分解后 P 的个数
 
 对于求逆元，由于m可能不是质数，故无法直接通过费马小定理直接求 ( $power(x,m-2)$ ),可以用exgcd求
 
-C++代码如下
+时间复杂度 $\mathcal{O}(t(\sqrt{y} + n\cdot (cnt+\log(m))+q\cdot cnt\cdot \log(m)))$，其中 cnt 为 m 的质因数的个数。
+
+### 具体代码如下——
+
+C++做法如下——
+
 ``` cpp []
 #include<bits/stdc++.h>
 using namespace std;
