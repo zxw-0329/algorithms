@@ -136,3 +136,6 @@ int main() {
     return 0;
 }
 ```
+https://www.codechef.com/problems/POWERMUL?tab=statement
+
+https://discuss.codechef.com/t/fombinatorial-editorial/8136
