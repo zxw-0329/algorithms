@@ -25,18 +25,19 @@ void solve() {
     cin >> n >> m;
     i64 ans = n;
 
-    for (int i = 1; i <= 60; i++) {
-        vector<i64>pw(i+1, 1);
+    for (int i = 1; i <= 40; i++) {
+        vector<i64>pw(i + 1, 1);
 
         int pos = 0;
         while (true) {
             i64 p = 1;
-            for (auto i : pw) {
-                p *= i;
+            for (auto j : pw) {
+                p *= j;
+                if (p >= n)break;
             }
             if (p < n) {
                 pw[pos++] += 1;
-                pos %= i;
+                pos %= i + 1;
             }
             else break;
         }
@@ -53,12 +54,13 @@ int main() {
     std::ios::sync_with_stdio(false);
     std::cin.tie(nullptr);
 
-    int t=1;
-    cin >> t;
+    int t = 1;
+    //cin >> t;
     while (t--) {
         solve();
     }
     return 0;
 }
+
 
 ```
