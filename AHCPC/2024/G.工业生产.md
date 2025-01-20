@@ -4,7 +4,10 @@
 
 **3.** 对于 $vector\< long\ long \>pw(i+1,1)$ 可以暴力调整每段的投入的时间数，当 $\prod\limits_{0 <= j <= i }p[j] >= n$ 结束调整。
 
-时间复杂度为 $\sum\limits_{k=2}^{60}\mathcal{O}(k*log(s) + k)$
+**4.** 对于优化暴力，由于求总时间最小即 $i*m+\sum\limits_{j=0}^{i}p[j]$ , 对于每一个 i，i 固定后 i * m 就为常数，显然是求 $\sum\limits_{j=0}^{i}p[j]$最小值满足 $\prod\limits_{0 <= j <= i }p[j] >= n$，所以可以直接二分答案， 二分枚举 $\sum\limits_{j=0}^{i}p[j]$，注意到对于固定的 $\sum\limits_{j=0}^{i}p[j]$ ，要让 $\prod\limits_{0 <= j <= i }p[j]$最大，应该尽量均匀分配时间
+
+
+时间复杂度为 $\sum\limits_{k=2}^{60}\mathcal{O}(k*log(s) + k)$（C++代码）
 
 ### 具体代码如下——
 
@@ -61,6 +64,44 @@ int main() {
     }
     return 0;
 }
+
+```
+
+Python代码如下——
+
+``` python []
+
+s, m = list(map(int, input().split()))
+N = 40
+ans = s
+
+
+def check(k, x):
+    t = k // x
+    a = [t] * x
+    k -= t * x
+    j = 0
+    while k > 0:
+        a[j] += 1
+        k -= 1
+        j = (j + 1) % x
+    p = 1
+    for k in range(x):
+        p *= a[k]
+    return p >= s
+
+
+for i in range(1, N):
+    l, r = 0, s
+    while l <= r:
+        mid = (l + r) >> 1
+        if check(mid, i + 1):
+            r = mid - 1
+        else:
+            l = mid + 1
+    ans = min(ans, i * m + l)
+
+print(ans)
 
 
 ```
