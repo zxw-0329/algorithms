@@ -4,7 +4,7 @@
 
 **3.** 对于 $vector\< long\ long \>pw(i+1,1)$ 可以暴力调整每段的投入的时间数，当 $\prod\limits_{0 <= j <= i }p[j] >= n$ 结束调整。
 
-时间复杂度为 $\sum\limits_{k=0}^{60}\mathcal{O}(k*log(s) + k)$
+时间复杂度为 $\sum\limits_{k=2}^{60}\mathcal{O}(k*log(s) + k)$
 
 ### 具体代码如下——
 
